@@ -49,5 +49,5 @@ corpus <- data.frame(
 For a given ISCO hierarchical level, the top suggested ISCO group is returned. `num_leaves` specifies the number of ESCO occupations used by the classifier to perform a plurality vote,
 
 ```{r with_isco_level}
-classify_occupation(corpus = corpus, isco_level = 3, lang = "en", num_leaves = 5)
+classify_occupation(corpus = corpus, isco_level = 3, isco_given = isco_given, lang = "en", num_leaves = 5)
 ```
