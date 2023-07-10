@@ -115,7 +115,7 @@ classify_occupation <- function(corpus, isco_given, id_col = "id", text_col = "t
   # The K-Nearest Neighbors algorithm and the suggested occupations are used to determine the most popular occupation of the requested ISCO level.
   if(!is.null(isco_level)) {
     predictions <- merge(predictions, occupations_bundle[, list(conceptUri, iscoGroup)], on = "conceptUri")
-    predictions[iscogiven==substr(iscoGroup, 0, 2), iscoGroup := substr(iscoGroup, 0, isco_level)]
+    predictions[isco_given==substr(iscoGroup, 0, 2), iscoGroup := substr(iscoGroup, 0, isco_level)]
     predictions <- predictions[, list(isco_nn = .N), by = c("id", "iscoGroup")
         ][order(id, -isco_nn)
           ][, head(.SD, 1), by = "id"]
