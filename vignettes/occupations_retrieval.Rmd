@@ -88,6 +88,7 @@ languages <- unique(corpus$language)
 suggestions <- lapply(languages, function(lang) {
   classify_occupation(
     corpus = corpus[language == lang],
+    isco_given = isco_given,
     lang = lang,
     isco_level = 3,
     num_leaves = 10
