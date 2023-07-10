@@ -64,7 +64,7 @@ classify_occupation <- function(corpus, isco_given, id_col = "id", text_col = "t
                                 num_leaves = 10, isco_level = 3, max_dist = 0.1, string_dist = NULL) {
 
   # due to NSE notes in R CMD check
-  NULL -> language -> term -> text -> tfIdf -> id -> iscoGroup -> weight_sum -> isco_nn -> conceptUri -> preferredLabel
+  NULL -> language -> term -> text -> tfIdf -> id -> iscoGroup -> isco_given -> weight_sum -> isco_nn -> conceptUri -> preferredLabel
   occupations_bundle <- occupations_bundle
   isco_occupations_bundle <- isco_occupations_bundle
 
